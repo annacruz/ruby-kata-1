@@ -2,6 +2,10 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'echocat'
+require '../lib/echocat'
 
-Echocat.run
+echocat = Echocat.new
+echocat.start
+while !echocat.end_program do
+  echocat.run
+end
